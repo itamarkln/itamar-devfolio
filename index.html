@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+        <link rel="stylesheet" href="CSS/main.css">
+        <title>Title</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="circle-cursor circle-cursor--inner"></div>
+        <div class="circle-cursor circle-cursor--outer"></div>
+        <!-- ------------- -->
+        <!-- Intro Section -->
+        <!-- ------------- -->
+        <div class="overlay">
+            <p class="screen">Itamar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Klein</p>
+            <div class="intro"><button class="intro-btn" onclick="fadeOut();">Explore</button></div>
+        </div>
+        <div class="overlay-2"></div>
+
+        <!-- -------------- -->
+        <!-- Navbar Section -->
+        <!-- -------------- -->
+       <nav>
+            <div class="menu-icon"><i class="fa fa-bars fa-2x"></i></div>
+            <div class="logo"><a href="#home-section">Itamar Klein</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#services-section">Services</a></li>
+                    <li><a href="#portfolio-section">Portfolio</a></li>
+                    <li><a href="#footer-section">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- -------------- -->
+        <!-- Header Section -->
+        <!-- -------------- -->
+        <div class="header" id="home-section">
+            <div id="particles-js"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                            <h1 class="animated bounceInDown">
+                                Hi! <span>I'm Itamar</span>
+                            </h1>
+                            <h2 class="typewrite animated fadeInLeft"
+                                data-period="2000"
+                                data-type='["FullStack web developer", "Designer", "I Love to Develop"]'>
+                                    <span class="wrap"></span>
+                            </h2>
+                            <p class="animated fadeInRight">
+                                I design and code beautifully simple things.
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <span class="scroll-btn">
+            	<a href="#about-section">
+            		<span class="mouse">
+            			<span>
+            			</span>
+            		</span>
+            	</a>
+            <span>
+        </div>
+
+       
+        <!-- ------------- -->
+        <!-- About Section -->
+        <!-- ------------- -->
+        <div class="about" id="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                       <h2 class="color-3 title_border">
+                            About Me
+                        </h2>
+                    </div>
+                    <div class="col-md-7 about-right">
+                        <p class="p-about">
+                                I'm a 19 year old FullStack Web Developer in Israel.
+                                I have serious passion for UI & UX effects, animations and creating
+                                intuitive and dynamic user experiences.
+                                I'm also great at problem solving and developing complex and 
+                                efficient algorithms.
+                                And in the last year I got to work at a high-tech company where I
+                                participated in a number of projects for developing websites and applications
+                                using the most innovative technologies in the market.
+                        </p>
+                        <div class="pg-bars"></div>
+                        <div class="about-btn">
+                            <a href="#footer-section">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------- -->
+        <!-- Services Section -->
+        <!-- ---------------- -->
+        <div class="services" id="services-section">
+            <h1 class="title_border">What I Provide</h1>
+            <p>
+                I'm quietly confident, naturally curious, and perpetually working on improving my skills one thing at a time.
+            </p>
+            <div class="container"></div>
+        </div>
+
+        <!-- ----------------- -->
+        <!-- Portfolio Section -->
+        <!-- ----------------- -->
+        <div class="portfolio" id="portfolio-section">
+            <h1 class="title_border">My Latest Works</h1>
+            <p>
+                Here are a few projects I've worked on recently. Want to see more?
+                <a class="green default-link" href="#footer-section">Email me.</a>
+            </p>
+            <div class="container">
+                <div class="row">
+                    <div class="portfolio-box" title="ioktech">
+                        <a href="https://ioktech.herokuapp.com/" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------------- -->
+        <!-- Footer Section -->
+        <!-- -------------- -->
+        <div class="footer" id="footer-section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="footer-logo">Itamar Klein.</h1>
+                    <div class="footer-anchors">
+                        <ul>
+                            <li>
+                                <p>Handcrafted by me &#169; <span class="green">itamarkln4@gmail.com</span></p>
+                                <p>All rights reserved.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="social-link">
+                        <li>
+                            <a href="https://www.facebook.com/itamar.klein.52">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/itamar_kln/">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/itamar-klein-8b56971a1/">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------------------- -->
+        <!-- Scroll To Top Button -->
+        <!-- -------------------- -->
+        <a href="#home-section" id="scrollTop-btn"><i class="fas fa-arrow-up"></i></a>
+        
+        <!-- JQuery cdn -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+        <!-- Intro cdn -->
+        <script src="JS/intro.js"></script>
+
+        <!-- Scroll To Top cdn -->
+        <script src="JS/scrollToTop.js"></script>
+
+        <!-- Navbar cdn -->
+        <script src="JS/navbar.js"></script>
+
+        <!-- Bootstrap cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <!-- Progress Bar cdn -->
+        <script src="JS/progress-bar.js"></script>
+
+        <!-- Services Section cdn -->
+        <script src="JS/services.js"></script>
+
+        <!-- Animate On Scroll cdn -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="JS/aos.js"></script>
+
+        <!-- Auto Typewriter cdn -->
+        <script src="JS/typer.js"></script>
+
+        <!-- Particles cdn -->
+        <script type="text/javascript" src="JS/particles/particles.js"></script>
+        <script type="text/javascript" src="JS/particles/app.js"></script>
+    </body>
+</html>

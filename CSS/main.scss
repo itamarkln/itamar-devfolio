@@ -1,0 +1,1092 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+    transition: $property $duration $ease;
+}
+
+$bg: #f3f8fa;
+$gray: #e0e0e0;
+$light-gray: #777777;
+$dark-gray: #2B2C30 !important;
+$white: #fff;
+$black: #1a1919;
+$dark-black: #000;
+$light-black: #242424;
+$lighter-black: #323232;
+$shady-black: #101010;
+$blue: #6e89d3;
+$red: #fd476f;
+$green: #13ca93;
+$golden-beige: #d6c6b2;
+$linear-gradient: linear-gradient(to bottom, #0fecaf, #00eea6, #00f09b, #00f290, #10f383);
+
+/* ----------------- */
+/* global components */
+/* ----------------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    color: $black;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: none;
+    &::before, &::after {
+      box-sizing: border-box;
+    }
+}
+
+.circle-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+
+  &--outer {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    z-index: 12000;
+    opacity: 0.5;
+  }
+
+  &--inner {
+    width: 5px;
+    height: 5px;
+    left: -2.5px;
+    top: -2.5px;
+    z-index: 11000;
+    background: #fff;
+  }
+}
+
+.green {
+    color: $green !important;
+}
+
+.default-link:hover {
+    text-decoration: none;
+    color: initial;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $green;
+    border-radius: 6px;
+}
+
+.title-section {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.title_border {
+    position: relative;
+}
+
+.title_border:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin: 10px auto;
+    width: 100px;
+    height: 4px;
+    background: $green;
+}
+
+.social-link {
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+
+        a i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 38px;
+            text-align: center;
+            border: 1px solid $shady-black;
+            background-color: $shady-black;
+            margin-right: 10px;
+            font-size: 16px;
+            color: $bg;
+            transition: all .4s;
+        }
+
+        a i:hover {
+            color: $white;
+            background: $green;
+        }
+    }
+}
+
+
+/* ------------------------ */
+/* scroll to top components */
+/* ------------------------ */
+#scrollTop-btn {
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(19, 202, 147, 0.9);
+    width: 44px;
+    height: 44px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.7s linear;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+
+    i {
+        color: $white;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        -webkit-transition: all 0.7s ease;
+        -moz-transition: all 0.7s ease;
+        -ms-transition: all 0.7s ease;
+        -o-transition: all 0.7s ease;
+        transition: all 0.7s ease;
+
+        &:hover {
+            top: 4px;
+        }
+    }
+
+    &:hover {
+        background: $green;
+    }
+}
+
+
+/* ---------------- */
+/* intro components */
+/* ---------------- */
+.overlay-2 {
+    z-index: 4;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: $green;
+}
+
+.overlay {
+    z-index: 8;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: $shady-black;
+}
+
+.overlay p {
+    font-size: 200px;
+    font-weight: 800;
+}
+
+.screen {
+    color: $lighter-black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    display: block;
+    padding: 24px 48px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: $white;
+    border: 2px solid $white;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: none;
+    transition: 0.8s ease-out;
+}
+
+.intro-btn:hover {
+    color: $shady-black;
+    cursor: none;
+}
+
+.intro-btn:before {
+    content: "";
+    position: absolute;
+    background: $white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    transition: top 0.8s ease-out;
+}
+
+.intro-btn:hover:before {
+    top: 0;
+}
+
+
+/* ----------------- */
+/* navbar components */
+/* ----------------- */
+.logo {
+    position: fixed;
+    float: left;
+    margin: 16px 36px;
+    color: $white;
+    font-weight: bold;
+    font-size: 24px;
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+    z-index: 2;
+}
+
+nav ul {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    color: $white;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: .8s;
+}
+
+nav.black ul {
+    background: $dark-black;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 16px 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: $white;
+    font-size: 16px;
+    transition: .4s;
+
+    &:hover {
+        text-decoration: none;
+        color: $light-gray;
+    }
+}
+
+.menu-icon {
+    line-height: 60px;
+    width: 100%;
+    background: $dark-black;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px 0 0;
+    cursor: none;
+    color: $white;
+    display: none;
+}
+
+
+/* ----------------- */
+/* header components */
+/* ----------------- */
+#particles-js {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+div.header {
+    width: 100%;
+    height: 100vh;    
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.90)), 
+                                url('../Images/book-computer-design-326424.jpg');
+    clip-path: polygon(0 0,100%,0,100%,100%,70%,87%,0 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 0;
+
+    .fa {
+        font-size: 16px;
+    }
+
+    .container {
+        .row {
+            .col-md-12 {
+                width: 100%;
+
+                h1 {
+                    font-size: 64px;
+                    color: $white;
+                    font-weight: 400;
+                    margin: 0;
+                    animation-delay: .5s;
+
+                    span {
+                        font-weight: 700;
+                        color: $green;
+                    }
+                }
+
+                h2 {
+                    color: $white;
+                    font-weight: 400;
+                    margin-top: 20px;
+                    font-size: 40px;
+                }
+        
+                p {
+                    font-size: 16px / 28px;
+                    color: $bg;
+                    margin: 20px 0;
+                    font-weight: 200;
+                    line-height: 24px;
+                    letter-spacing: 0.1em;
+                    // word-break: break-all;
+                }
+
+                .btn {
+                    margin: 40px 0 0 0;
+
+                    a {
+                        margin: 0;
+                        border: 2px solid $white;
+                        border-radius: .25rem;
+                        background-color: $white;
+                        color: $green;
+                        padding: 12px 44px;
+                        font-size: 15px;
+                        text-decoration: none;
+                        outline: none;
+                        font-weight: 600;
+                        cursor: none;    
+                        transition: all .5s;
+
+                        &:hover {
+                            border: 1px solid $green;
+                            background-color: $green;
+                            color: $bg;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+
+@-moz-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+
+ .scroll-btn {
+	display: block;
+	position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+	text-align: center;
+}
+
+.scroll-btn > * {
+	display: inline-block;
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: normal;
+	color: #7f8c8d;
+	color: #ffffff;
+	letter-spacing: 2px;
+}
+
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+	color: #ffffff;
+}
+
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.scroll-btn .mouse {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 55px;
+	margin: 0 auto 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 2px solid $bg;
+	border-radius: 23px;
+}
+
+.scroll-btn .mouse > * {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+	background: $white;
+	border-radius: 50%;
+	-webkit-animation: ani-mouse 2.5s linear infinite;
+	-moz-animation: ani-mouse 2.5s linear infinite;
+	animation: ani-mouse 2.5s linear infinite;
+}
+
+
+/* ---------------- */
+/* about components */
+/* ---------------- */
+div.about {
+    width: 100%;
+    background-color: $shady-black;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 98px auto 101px auto;
+    margin: 0;
+
+    .container {
+        margin: 100px 20px;
+
+        .col-md-5,
+        .col-md-7 {
+            margin: 0;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+    }
+
+    .pg-bars {
+        width: 100%;
+
+        .pgbar-container {
+            width: 100%;
+            margin-bottom: 12px;
+    
+            .pgbar-data {
+                color: $light-gray;
+    
+                p.subj {
+                    float: left;
+                    font-size: 14px;
+                }
+    
+                p.prcntg {
+                    float: right;
+                }
+            }
+    
+            .progress-bar {
+                border-radius: 60px;
+                overflow: hidden;
+                width: 100%;
+                height: 6px;
+            
+                span {
+                    display: block;
+                }
+            }
+    
+            .bar {
+              background: rgba(29, 29, 29, 0.90);
+            }
+    
+            .progress {
+              border-radius: 60px;
+              background: $green;
+              color: $white;
+              padding: 2px;
+              width: 0;
+            }
+        }
+    }
+
+    .p-about {
+        margin-bottom: 30px;
+        color: $light-gray;
+        text-align: initial;
+    }
+
+    h2 {
+        font-size: 44px;
+        font-weight: 800;
+        margin: 0 auto;
+    }
+
+    .color-3 {
+        color: $gray;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .about-btn {
+        margin: 40px 20px 20px 0;
+
+        a {
+            margin: 0;
+            border: 2px solid $green;
+            border-radius: .25rem;
+            background-color: transparent;
+            color: $bg;
+            background-color: $green;
+            padding: 12px 44px;
+            font-size: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: none;    
+            transition: .5s;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid $green;
+                color: $green;
+            }
+        } 
+    }
+}
+
+
+/* ------------------- */
+/* services components */
+/* ------------------- */
+.services {
+    margin: 0;
+    width: 100%;
+    background-color: $black;
+    color: $gray;
+
+    h1 {
+        padding-top: 100px;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    p {
+        margin: 54px 20px 0 20px;
+        text-align: center;
+    }
+
+    .container {
+        margin: 40px auto 0 auto;        
+        background-color: inherit;
+
+        .row {
+            justify-content: center;
+            padding-bottom: 100px;
+
+            .serviceBox { 
+                margin-top: 60px;
+                text-align: center; 
+
+                .title {
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin: 0 0 10px 0;
+                }
+
+                .description {
+                    font-size: 16px;
+                    color: $light-gray;
+                    padding: 0 20px;
+                    margin: 0;
+                }
+
+                .service-icon {
+                    width: 80px;
+                    height: 80px;
+                    line-height: 80px;
+                    border-radius: 50%;
+                    border: 2px solid $green;
+                    background: $green;
+                    font-size: 35px;
+                    color: $green;
+                    margin: 0 auto 20px;
+                    position: relative;
+
+                    i {
+                        transform: scale(1);
+                        color: $bg;
+                        transition: all 0.4s ease-in-out 0s;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 90px;
+                        height: 90px;
+                        border-radius: 50%;
+                        background: transparent;
+                        position: absolute;
+                        top: -6px;
+                        left: -6px;
+                        transition: all 0.3s ease-in-out 0s;
+                    }
+                }
+
+                &:hover .service-icon i {
+                    transform: scale(1.15);
+                }
+
+                &:hover .service-icon:after {
+                    box-shadow: 4px 4px 2px rgba(19, 202, 147, 0.89);
+                }
+            }
+        }
+    }
+}
+
+
+/* -------------------- */
+/* portfolio components */
+/* -------------------- */
+.portfolio {
+    margin: 0;
+    width: 100%;
+    background-color: $shady-black;
+    color: $gray;
+
+    h1 {
+        padding-top: 100px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    p {
+        margin: 54px 20px 0 20px;
+        color: $light-gray;
+        text-align: center;
+    }
+
+    .container {
+        margin: 40px auto 0 auto;        
+        background-color: inherit;
+
+        .row {
+            justify-content: center;
+            padding-bottom: 80px;
+
+            .portfolio-box {
+                position: relative;
+                margin: 60px 54px 40px 54px;
+                width: 320px;
+                height: 400px;
+                border: 5px solid $light-black;
+                border-radius: 8px;
+                box-shadow:  0 20px 30px rgba(0, 0, 0, 0.5);
+                cursor: none;
+                transition: 6s;
+
+                a {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                &:nth-child(1) {
+                    background: url('../Images/iok_tech_webpage.png');
+                    background-size: cover;
+                    background-position: top;
+                }
+
+                &:nth-child(2) {
+                    background: url('../Images/ik_web_designing_webpage.png');
+                    background-size: cover;
+                    background-position: top;
+                }
+
+                &:hover {
+                    background-position: bottom;
+                }
+            }
+        }
+    }
+}
+
+
+/* ------------------ */
+/* contact components */
+/* ------------------ */
+.contact {
+    position: sticky;
+    margin: 0;
+    padding: 120px 0;
+    background-color: $shady-black;
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+
+        .row {
+            padding: 40px;
+            text-align: center;
+            background-color: $white;
+            border-radius: 8px;
+            box-shadow: 8px 10px 40px 30px rgba(0, 0, 0, .4);
+
+            .col-md-6 {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-flow: row wrap;
+            }
+
+            .col-md-6 h1.contact-title {
+                color: $shady-black;
+                text-align: center;
+                font-weight: 800;
+            }
+
+            .col-md-6 a.contact-btn {
+                text-decoration: none;
+                border: 2px solid $green;
+                background-color: $green;
+                padding: 14px 44px;
+                border-radius: .25rem;
+                font-size: 16px;
+                text-align: center;
+                margin: 0 auto;
+                color: $white;
+                transition: .4s;
+
+                &:hover {
+                    color: $bg;
+                    border: 2px solid $shady-black;
+                    background-color: $shady-black;
+                }
+            }
+        }
+    }
+}
+
+
+/* ----------------- */
+/* footer components */
+/* ----------------- */
+.footer {
+    margin: 0;
+    width: 100%;
+    background-color: $black;
+    color: $white;
+
+    .container {
+        margin: 0 auto;        
+        background-color: inherit;
+
+        .row {
+            justify-content: center;
+            display: block;
+            padding-bottom: 40px;
+            margin: 0 auto;
+            text-align: center;
+
+            h1.footer-logo {
+                font-weight: bold;
+                font-size: 40px;
+                padding: 80px 0 20px 0;
+            }
+
+            .footer-anchors {
+                margin: 0;
+                margin-bottom: 24px;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    text-align: center;
+                    margin: 0;
+    
+                    li {
+                        display: inline-block;
+                        padding: 0 16px;
+    
+                        p {
+                            font-size: 16px;
+                            color: $light-gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* --------------------- */
+/* responsive components */
+/* --------------------- */
+@media only screen and (max-width: 990px) {
+    
+    /* global */
+    body {
+        margin: 0;
+        padding: 0;
+        color: $black;
+    }
+    
+    * {
+        box-sizing: border-box;
+        &::before, &::after {
+          box-sizing: border-box;
+        }
+    }
+
+
+    /* intro */
+    .overlay p {
+        font-size: calc(400%);
+        font-weight: 800;
+    }
+
+    button {
+        padding: 20px 40px;
+        font-size: 10px;
+    }
+
+    
+    /* navbar */
+    .logo {
+          position: fixed;
+          top: 0;
+          margin-top: 10px;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: $dark-black;
+    }
+
+    nav.black ul {
+          background: $dark-black;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 10px 0;
+          text-align: center;
+          margin: 0 16px;
+    }
+
+    .menu-icon {
+          display: block;
+    }
+    
+
+    /* header */
+    div.header .container .row .col-md-12 {
+
+        h1 {
+            font-size: 44px;
+        }
+
+        h2.typewrite {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .btn {
+            a {
+                padding: 10px 28px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .scroll-btn {
+        .mouse {
+            width: 25px;
+            height: 45px;
+        }
+    }
+
+
+    /* about */
+    .container {
+        .col-md-5 {
+            h2 {
+                font-size: 34px;
+                margin-bottom: 80px;
+            }
+        }
+
+        .col-md-7 {
+            margin: 0 auto;
+
+            .about-btn {
+
+                a {
+                    padding: 10px 28px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+
+    /* services */
+    .services {
+
+        h1 {
+            font-size: 34px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .serviceBox { 
+            margin-bottom: 30px;
+        }
+        
+    }
+
+
+    /* portfolio */
+    h1 {
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .portfolio > .container > .row > .portfolio-box {
+        width: 320px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 764px) {
+    /* contact */
+    .contact {
+
+        .container > .row >  {
+            padding-bottom: 0;
+
+            .col-md-6:nth-child(1) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
