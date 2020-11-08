@@ -808,6 +808,12 @@ div.about {
                     background-position: top;
                 }
 
+                &:nth-child(3) {
+                    background: url('../Images/web_scraper_webpage.png');
+                    background-size: cover;
+                    background-position: top;
+                }
+
                 &:hover {
                     background-position: bottom;
                 }
