@@ -798,6 +798,12 @@ div.about .about-btn a:hover {
   background-position: top;
 }
 
+.portfolio .container .row .portfolio-box:nth-child(3) {
+  background: url("../Images/web_scraper_webpage.png");
+  background-size: cover;
+  background-position: top;
+}
+
 .portfolio .container .row .portfolio-box:hover {
   background-position: bottom;
 }
